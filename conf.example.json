@@ -1,0 +1,12 @@
+{
+	"MQQT": {
+		"Uri": "tcp://127.0.0.1:1883",
+		"Username": "myuser",
+                "Password": "mypassword",
+                "ClientID": "trackbox-mqqt"
+	},
+	"MongoDB": {
+		"ConnectionString": "localhost",
+		"Database": "geofence"
+	}
+}
