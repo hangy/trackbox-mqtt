@@ -81,6 +81,12 @@ var f MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
 	if err != nil {
 		log.Println(err)
 	}
+
+	// Notify other trackbox components that at least one new event has been created.
+	// This could be batched to only send one update notification to other components every x minutes, if there has been an upadate, but right now, we don't have that kind of load.
+	topic := fmt.Sprintf("trackbox/%s/events", username)
+	token := client.Publish(topic, 0, false, "geofence")
+	token.Wait()
 }
 
 func main() {
