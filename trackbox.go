@@ -32,12 +32,12 @@ type MongoDBConfiguration struct {
 }
 
 type TrackboxEvent struct {
-	Event            string    `bson:"Event"`
-	EntityType       string    `bson:"EntityType"`
-	EntityId         string    `bson:"EntityId"`
-	TargetEntityType string    `bson:"TargetEntityType"`
-	TargetEntityId   string    `bson:"TargetEntityId"`
-	EventTime        time.Time `bson:"EventTime"`
+	Event            string    `bson:"event"`
+	EntityType       string    `bson:"entityType"`
+	EntityId         string    `bson:"entityId"`
+	TargetEntityType string    `bson:"targetEntityType"`
+	TargetEntityId   string    `bson:"targetEntityId"`
+	EventTime        time.Time `bson:"eventTime"`
 }
 
 type MQQTEvent struct {
