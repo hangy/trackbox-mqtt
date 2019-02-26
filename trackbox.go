@@ -2,7 +2,7 @@ package main
 
 import (
 	MQTT "github.com/eclipse/paho.mqtt.golang"
-	"gopkg.in/mgo.v2"
+	"github.com/globalsign/mgo"
 
 	"encoding/json"
 	"fmt"
@@ -56,6 +56,8 @@ type MQQTEvent struct {
 var collection *mgo.Collection
 
 var f MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
+	fmt.Println("some message")
+
 	log.Printf("TOPIC: %s\n", msg.Topic())
 	log.Printf("MSG: %s\n", msg.Payload())
 	if msg.Duplicate() {
